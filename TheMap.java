@@ -1,6 +1,6 @@
 public class TheMap<K,V>{
   private Node<K,V>[] map;
-  private static final int INITIAL_CAPACITY = 1 << 4; //16
+  private static final int INITIAL_CAPACITY = 16; 
 
   private int size = 0;
 
