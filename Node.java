@@ -1,3 +1,5 @@
+package map;
+
 public class Node<K,V> {
   final K key;
   V value;
@@ -7,14 +9,6 @@ public class Node<K,V> {
     this.key = key;
     this.value = value;
     this.next = next;
-  }
-
-  public K GetKey() {
-    return this.key;
-  }
-
-  public V GetValue() {
-    return this.value();
   }
 
   public String toString(){
