@@ -1,24 +1,23 @@
-package Map;
-
-public class HashMap.java {
+public class TheMap<K,V>{
   private Node<K,V>[] map;
   private static final int INITIAL_CAPACITY = 1 << 4; //16
 
   private int size = 0;
 
-  public HashMap() {
+  public TheMap() {
     this(INITIAL_CAPACITY);
   }
 
-  public HashMap(int capacity) {
+  public TheMap(int capacity) {
     this.map = new Node[capacity];
+    size = capacity;
   }
 
-  public getSize(){
+  public int getSize(){
     return this.size;
   }
 
-  private getHash(K key){
+  private int  getHash(K key){
     return key.hashCode();
   }
 
@@ -26,9 +25,9 @@ public class HashMap.java {
     Node<K,V> entry = new Node<>(key, value, null);
 
     int code = getHash(key) % getSize();
-
-    if(map[code] == null){
-      maps[code] = entry;
+    Node<K,V> existing = map[code];    
+    if(existing== null){
+      map[code] = entry;
       size ++;  
     } else {
       while (existing.next != null) {
